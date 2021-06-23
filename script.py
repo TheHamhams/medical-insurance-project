@@ -1,4 +1,5 @@
 import csv
+from smoker_class import AnalizeSmokers
 
 ages = []
 sexes = []
@@ -20,5 +21,9 @@ get_data(sexes, 'sex')
 get_data(bmis, 'bmi')
 get_data(smoker_statuses, 'smoker')
 get_data(num_children, 'children')
-get_data(regions, 'regions')
+get_data(regions, 'region')
 get_data(insurance_charges, 'charges')
+
+smoker_data = AnalizeSmokers(ages, sexes, bmis, num_children, smoker_statuses, regions, insurance_charges)
+smoker_data.analize_ages()
+smoker_data.analize_sexes()
