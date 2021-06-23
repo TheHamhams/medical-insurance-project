@@ -1,7 +1,19 @@
 import csv
 
-data = []
+ages = []
+sexes = []
+bmis = []
+num_children = []
+smoker_statuses = []
+regions = []
+insurance_charges = []
 
-with open("insurance.csv", "w") as insurance:
-    fields = ['age', 'sex', 'bmi', 'children', 'smoker', 'region', 'charges']
-    
+def get_data(arr, column):
+    with open("insurance.csv") as insurance:
+        data_dict = csv.DictReader(insurance)
+        for row in data_dict:
+            arr.append(row[column])
+    return arr
+
+get_data(ages, 'age') 
+print(ages)
