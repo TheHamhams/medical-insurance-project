@@ -16,4 +16,9 @@ def get_data(arr, column):
     return arr
 
 get_data(ages, 'age') 
-print(ages)
+get_data(sexes, 'sex')
+get_data(bmis, 'bmi')
+get_data(smoker_statuses, 'smoker')
+get_data(num_children, 'children')
+get_data(regions, 'regions')
+get_data(insurance_charges, 'charges')
