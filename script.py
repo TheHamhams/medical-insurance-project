@@ -28,3 +28,5 @@ smoker_data = AnalizeSmokers(ages, sexes, bmis, num_children, smoker_statuses, r
 smoker_data.analize_ages()
 smoker_data.analize_sexes()
 smoker_data.analize_bmis()
+smoker_data.analize_charges()
+smoker_data.analize_children()

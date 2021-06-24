@@ -50,6 +50,24 @@ class AnalizeSmokers:
         female_rate = int(female_yes / female_count * 100)
         print(f"{male_rate}% of males are smokers while {female_rate}% of females are smokers.")
 
+    def analize_children(self):
+        yes_count = 0
+        yes_total = 0
+        no_count = 0
+        no_total = 0
+        i = 0
+        while i < len(self.bmis_array):
+            if self.smoker_statuses_array[i] == 'yes':
+                yes_total += round(float(self.num_children_array[i]), 1)
+                yes_count += 1
+            else:
+                no_total += round(float(self.num_children_array[i]), 1)
+                no_count += 1
+            i += 1
+        avg_yes = round(yes_total / yes_count, 1)
+        avg_no = round(no_total / no_count, 1)
+        print(f"The average number of children for non-smokers is {avg_no} while the average number of children for smokers is {avg_yes}.")
+
     def analize_bmis(self):
         yes_count = 0
         yes_total = 0
@@ -67,3 +85,21 @@ class AnalizeSmokers:
         avg_yes = round(yes_total / yes_count, 1)
         avg_no = round(no_total / no_count, 1)
         print(f"The average bmi of non-smokers is {avg_no} while the average bmi for smokers is {avg_yes}.")
+
+    def analize_charges(self):
+        yes_count = 0
+        yes_total = 0
+        no_count = 0
+        no_total = 0
+        i = 0
+        while i < len(self.bmis_array):
+            if self.smoker_statuses_array[i] == 'yes':
+                yes_total += round(float(self.charges_array[i]), 1)
+                yes_count += 1
+            else:
+                no_total += round(float(self.charges_array[i]), 1)
+                no_count += 1
+            i += 1
+        avg_yes = round(yes_total / yes_count, 1)
+        avg_no = round(no_total / no_count, 1)
+        print(f"The average insurance charges of non-smokers is {avg_no} while the average insurance_charges for smokers is {avg_yes}.")
